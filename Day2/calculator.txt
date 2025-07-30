@@ -1,0 +1,27 @@
+import java.util.*;
+public class TestPrj2 {
+	public static void main(String args[]) {
+		Scanner sc=new Scanner(System.in);
+				System.out.print("Enter a first num: ");
+		int num1=sc.nextInt();
+		System.out.print("Enter a second num: ");
+		int num2=sc.nextInt();
+		System.out.print("Enter a operation: ");
+		char op=sc.next().charAt(0);
+		
+		switch(op) {
+		case '+': int add= num1+num2; System.out.println("Add: " +add ); break;
+		
+		case '-': int sub= num1-num2; System.out.println("Sub: " +sub ); break;
+		
+		case '*': int mult= num1*num2; System.out.println("Multi: " +mult ); break;
+		
+		case '/': int div= num1/num2; System.out.println("Div: " +div ); break;
+		
+		case '%': int mod= num1%num2; System.out.println("modul: " +mod ); break;
+		
+		default: System.out.println("Enter valid operation....");
+			break;
+		}
+	}
+}

@@ -1,0 +1,19 @@
+import java.util.*;
+public class TestPrj2 {
+	public static void main(String args[]) {
+		Scanner sc=new Scanner(System.in);
+		System.out.print("number : ");
+		int n= sc.nextInt();
+		int re=0;
+		int n1=n;
+		while(n>0) {
+			re = re * 10 + n % 10;
+			n = n/10;
+		}
+		if(n1 == re) {
+			System.out.print("palendrom");
+		}else {
+			System.out.print("Not Palendrom");
+		}
+	}
+}

@@ -1,0 +1,127 @@
+import java.util.Scanner;
+
+public class TestPrj1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Select an option:");
+        System.out.println("1. Find Second Maximum");
+        System.out.println("2. Find Max of Three Numbers");
+        System.out.println("3. Leap Year Check");
+        System.out.println("4. Grade Calculator");
+        System.out.println("5. Positive / Negative / Zero");
+        System.out.println("6. Odd / Even / Positive / Negative");
+        System.out.println("7. Triangle Validity Check");
+        System.out.println("8. Electricity Bill Calculation");
+        System.out.print("Enter your choice: ");
+
+        int choice = sc.nextInt();
+
+        switch (choice) {
+            case 1:
+                int[] arr = {1, 27, 3, 4, 5, 6, 7};
+                int max = arr[0];
+                int secmax = Integer.MIN_VALUE;
+
+                for (int i = 1; i < arr.length; i++) {
+                    if (arr[i] > max) {
+                        secmax = max;
+                        max = arr[i];
+                    } else if (arr[i] > secmax && arr[i] != max) {
+                        secmax = arr[i];
+                    }
+                }
+                System.out.println("Max: " + max);
+                System.out.println("Second Max: " + secmax);
+                break;
+
+            case 2:
+                System.out.println("Enter three numbers:");
+                int n = sc.nextInt();
+                int m = sc.nextInt();
+                int o = sc.nextInt();
+                int largest = (n > m) ? (n > o ? n : o) : (m > o ? m : o);
+                System.out.println("Max: " + largest);
+                break;
+
+            case 3:
+                System.out.print("Enter a year: ");
+                int year = sc.nextInt();
+                String yguess = ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+                        ? "Leap year"
+                        : "Not leap year";
+                System.out.println(yguess);
+                break;
+
+            case 4:
+                System.out.print("Enter grade: ");
+                int grade = sc.nextInt();
+                if (grade > 90) {
+                    System.out.println("Distinction");
+                } else if (grade > 75) {
+                    System.out.println("First Class");
+                } else if (grade > 50) {
+                    System.out.println("Second Class");
+                } else {
+                    System.out.println("Fail");
+                }
+                break;
+
+            case 5:
+                System.out.print("Enter a number: ");
+                int num = sc.nextInt();
+                if (num > 0) {
+                    System.out.println("Positive");
+                } else if (num == 0) {
+                    System.out.println("Zero");
+                } else {
+                    System.out.println("Negative");
+                }
+                break;
+
+            case 6:
+                System.out.print("Enter a number: ");
+                int i = sc.nextInt();
+                if (i % 2 == 0 && i > 0) {
+                    System.out.println("Positive Even");
+                } else if (i % 2 == 0 && i < 0) {
+                    System.out.println("Negative Even");
+                } else if (i % 2 != 0 && i > 0) {
+                    System.out.println("Positive Odd");
+                } else {
+                    System.out.println("Negative Odd");
+                }
+                break;
+
+            case 7:
+                System.out.println("Enter three sides of triangle:");
+                int a = sc.nextInt();
+                int b = sc.nextInt();
+                int c = sc.nextInt();
+                if (a + b > c && b + c > a && c + a > b) {
+                    System.out.println("Valid Triangle");
+                } else {
+                    System.out.println("Invalid Triangle");
+                }
+                break;
+
+            case 8:
+                System.out.println("Enter units used:");
+                int unit = sc.nextInt();
+                System.out.println("Enter cost per unit:");
+                int cost = sc.nextInt();
+                if (unit <= 100) {
+                    System.out.println("NO BILL, ENJOY!!!!!!!1");
+                } else {
+                    int bill = (unit - 100) * cost;
+                    System.out.println("Bill = " + bill);
+                }
+                break;
+
+            default:
+                System.out.println("Invalid choice!");
+        }
+
+        sc.close();
+    }
+}
