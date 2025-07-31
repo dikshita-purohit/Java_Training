@@ -1,0 +1,11 @@
+import java.util.*;
+
+public class TestPrj4 {
+	public static void main(String args[]) {
+		Scanner sc=new Scanner(System.in);
+		//Reverse a array
+		Integer [] a= {1,2,3,4,5};
+		Collections.reverse(Arrays.asList(a));
+		System.out.print(Arrays.asList(a));
+	}
+}

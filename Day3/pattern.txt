@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class TestPrj3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+//        *****
+//         ***
+//          *
+        
+        int n=4;
+        for(int i=n-1;i>=0;i--) {
+        	for(int space=0;space<=n-1-i;space++) {
+        		System.out.print(" ");
+        	}
+        	for(int start =1; start<=2*i-1;start++) {
+        		System.out.print("*");
+        	}
+        	System.out.println(" ");
+        }
+	}
+}

@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class TestPrj4 {
+	public static void main(String args[]) {
+		Scanner sc=new Scanner(System.in);
+		//input: (move 0 to end)  {0,2,3,0,4,5}
+		//output: {2,3,4,1,0,0}
+		
+		System.out.println("enter the array size");
+		int n=sc.nextInt();
+		System.out.println("enter the elements");
+		int arr[]=new int[n];
+		for(int i=0;i<n;i++) {
+			arr[i]=sc.nextInt();
+		}
+		
+		int temp=0;
+		int pos=0;
+		for(int i=0;i<n;i++) {
+			if(arr[i]!=0) {
+				temp=arr[pos];
+				arr[pos]=arr[i];
+				arr[i]=temp;
+				pos++;
+			}
+			
+		}
+		for(int i=0;i<n;i++) {
+		System.out.print(arr[i]);
+		
+		}
+	}
+}

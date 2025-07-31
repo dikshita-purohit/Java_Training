@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class TestPrj4 {
+	public static void main(String args[]) {
+		Scanner sc=new Scanner(System.in);
+		//Rotation Program
+		
+		
+		int arr[] = {1, 4, 6, 1, 4, 6};
+        System.out.print("Enter n: ");
+        int n = sc.nextInt();
+
+        int[] carr = Arrays.copyOf(arr, arr.length);
+        for (int i = 0; i < n; i++) {
+            int last = carr[carr.length - 1];
+            for (int j = carr.length - 1; j > 0; j--) {
+                carr[j] = carr[j - 1];
+            }
+            carr[0] = last;
+        }
+
+        if (Arrays.equals(carr, arr)) {
+            System.out.println("1");
+        } else {
+            System.out.println("0");
+        }
+}
+}

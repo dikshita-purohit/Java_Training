@@ -1,0 +1,22 @@
+import java.util.*;
+
+public class TestPrj4 {
+	public static void main(String args[]) {
+		Scanner sc=new Scanner(System.in);
+    //  largest element in array
+		System.out.print("Enter array elements with space: ");
+        String input = sc.nextLine();
+
+        String[] a = input.trim().split("\\s+");
+
+        int max = Integer.MIN_VALUE; 
+        for (int i = 0; i < a.length; i++) {
+            int num = Integer.parseInt(a[i]);
+            if (num > max) {
+                max = num;
+            }
+        }
+
+        System.out.println("Max = " + max);
+	}
+}
