@@ -1,0 +1,15 @@
+import java.util.*;
+public class TestPrj5 {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		//Count number of words
+		//i am human ,and i like coding ,especally in java
+		System.out.print("Enter String with space in between each words : ");
+		String input = sc.nextLine();
+		
+		String cleaned = input.replaceAll("[,/\"']", "");
+		
+		String arr[] = cleaned.trim().split("\\s+");
+		System.out.print("Number of words in string are: "+arr.length);
+	}
+}

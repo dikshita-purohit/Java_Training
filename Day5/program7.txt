@@ -1,0 +1,29 @@
+import java.util.*;
+public class TestPrj5 {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+
+		//String rotation ,checks if s2 is found in s1 
+		// input S1: hello, S2: ohell
+		//outpt: Yes the rotation is possible
+		
+		System.out.print("Enter String S1: ");
+		String s1 = sc.next();
+		System.out.print("Enter String S2: ");
+		String s2 = sc.next();
+		
+		String sum=s1+s1;
+		char a[]=sum.toCharArray();
+		char b[]=s2.toCharArray();
+		
+		if(a.length == b.length) {
+			System.out.print("String size is not same cant be roataed...");
+		}else {
+			if(sum.contains(s2)) {
+				System.out.print("Rotatable");
+			}else {
+				System.out.print("Cannot rotate");
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+import java.util.*;
+public class TestPrj5 {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		//Anagram
+		System.out.print("Enter String S1: ");
+		String s1 = sc.next();
+		System.out.print("Enter String S2: ");
+		String s2 = sc.next();
+		
+		int[] fre = new int[26];
+		if(s1.length()==s2.length()) {
+			char a[]=s1.toCharArray();
+			char b[]=s2.toCharArray();
+			for(int i=0;i<s1.length();i++) {
+				fre[a[i]-97]++;
+				fre[b[i]-97]--;
+			}
+			for(int i=0;i<26;i++) {
+				if(fre[i]==0) {
+					break;
+				}
+			}
+			System.out.print("Anagram..");
+		}else {
+			System.out.print("Not Anagram.......");
+		}
+		
+	}
+
+}

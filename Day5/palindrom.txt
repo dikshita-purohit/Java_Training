@@ -1,0 +1,21 @@
+import java.util.*;
+public class TestPrj5 {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		//palindrome
+		System.out.print("Enter String: ");
+		String input = sc.next();
+        	char[] s = input.toCharArray();
+        	StringBuilder result = new StringBuilder();
+        	for (int i = 0; i < s.length; i++) {
+            		char ch = s[i];
+            		result.append(ch);
+            
+        	}
+        	if(result.reverse().toString().equals(input)) {
+        		System.out.print("Palindrome");
+        	}else {
+        		System.out.print("Not Palindrome");
+        	}
+	}
+}

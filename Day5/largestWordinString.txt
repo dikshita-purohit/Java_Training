@@ -1,0 +1,21 @@
+import java.util.*;
+public class TestPrj5 {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		//Largest word in sentence
+		System.out.print("Enter String with space in between each words : ");
+		String input = sc.nextLine();
+		
+		String cleaned = input.replaceAll("[,/\"']", "");
+		
+		String arr[] = cleaned.trim().split("\\s+");
+		String largestWord = "";
+        	for (String word : arr) {
+            		if (word.length() > largestWord.length()) {
+                		largestWord = word;
+            		}
+        	}
+
+        	System.out.println("The largest word is: " + largestWord);
+	}
+}
