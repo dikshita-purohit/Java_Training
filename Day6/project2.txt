@@ -1,0 +1,24 @@
+class TestPrj6 extends Run_time_polymorphism {
+@Override
+    void display() {
+        System.out.println("I am a ISE student");
+    }
+
+    public static void main(String[] args) {
+        Run_time_polymorphism rn = new TestPrj6(); 
+        rn.display();
+
+        TestPrj6 ts = new TestPrj6();
+        ts.display();
+    }
+}
+		
+class Run_time_polymorphism {
+
+	void display() {
+		System.out.println("I am a Student");
+	}
+}
+
+//output:  I am a ISE student
+//	I am a ISE student

@@ -1,0 +1,62 @@
+package prj1;
+
+import java.util.*;
+public class TestPrj6 {
+	public static void main(String args[]) {
+		Scanner sc=new Scanner(System.in);
+		
+		
+//		Enter numbers separated by space:
+//		1 2 1 3 5 4 4 5 5 5
+//		output:
+//		2 3 1 4 5 
+        System.out.println("Enter numbers separated by space:");
+        String[] inputStr = sc.nextLine().split(" ");
+        int[] input = new int[inputStr.length];
+
+        for (int i = 0; i < inputStr.length; i++) {
+            input[i] = Integer.parseInt(inputStr[i]);
+        }
+
+        int[] unique = new int[input.length];
+        int[] freq = new int[input.length];
+        int uniqueCount = 0;
+
+        for (int i = 0; i < input.length; i++) {
+            boolean found = false;
+            for (int j = 0; j < uniqueCount; j++) {
+                if (input[i] == unique[j]) {
+                    freq[j]++;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                unique[uniqueCount] = input[i];
+                freq[uniqueCount] = 1;
+                uniqueCount++;
+            }
+        }
+
+        for (int i = 0; i < uniqueCount - 1; i++) {
+            for (int j = i + 1; j < uniqueCount; j++) {
+                if (freq[i] > freq[j] || (freq[i] == freq[j] && unique[i] > unique[j])) {
+                    // Swap frequency
+                    int tempFreq = freq[i];
+                    freq[i] = freq[j];
+                    freq[j] = tempFreq;
+
+                    // Swap numbers
+                    int tempNum = unique[i];
+                    unique[i] = unique[j];
+                    unique[j] = tempNum;
+                }
+            }
+        }
+
+        System.out.println("Output:");
+        for (int i = 0; i < uniqueCount; i++) {
+            System.out.print(unique[i] + " ");
+        }
+	}
+}

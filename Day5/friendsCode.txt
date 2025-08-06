@@ -1,0 +1,26 @@
+import java.util.*;
+public class Friends {
+	String a,b,c;
+	public void Friends(String name, String hobbies,String gender) {
+		this.a=name;
+		this.b=hobbies;
+		this.c=gender;
+		System.out.print("\nDetails:  ");
+		System.out.print("\nName: "+a+ "\nGender: "+b+ "\nHobby: "+c);
+	}
+	
+	
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter name: ");
+		String a=sc.next();
+		System.out.print("Enter hobby: ");
+		String b=sc.next();
+		System.out.print("Enter Gender: ");
+		String c=sc.next();
+		
+		Friends ff=new Friends();
+		
+		ff.Friends(a, b, c);
+	}
+}
